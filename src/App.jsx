@@ -12,7 +12,8 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-background font-sans overflow-x-hidden">
+    <div className="min-h-screen bg-[var(--color-background)] font-sans overflow-x-hidden text-[var(--color-text-premium)] selection:bg-[var(--color-emerald)] selection:text-white relative">
+      <div className="noise-bg"></div>
       <Navbar />
       <main>
         <Hero />

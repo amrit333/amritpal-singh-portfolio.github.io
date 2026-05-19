@@ -48,7 +48,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[var(--color-emerald)]/5 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
@@ -58,11 +58,11 @@ const Contact = () => {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400 mb-6 neon-text">
+          <h2 className="text-4xl md:text-5xl font-extrabold gradient-text mb-6">
             Let's Build Something Amazing Together
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full mb-6"></div>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <div className="w-24 h-1 bg-gradient-to-r from-[var(--color-teal)] to-[var(--color-emerald)] mx-auto rounded-full mb-6"></div>
+          <p className="text-[var(--color-text-muted)] max-w-2xl mx-auto text-lg font-light">
             Ready to start a project or just want to say hi? I'm always open to discussing new opportunities, creative ideas, or visions to bring to life.
           </p>
         </motion.div>
@@ -77,42 +77,42 @@ const Contact = () => {
           >
             {/* Contact Details Cards */}
             <a href="mailto:jot60103@gmail.com" className="block">
-              <div className="glass-card p-6 rounded-2xl flex items-center gap-6 group hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] hover:-translate-y-1">
-                <div className="p-4 rounded-full bg-white/5 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+              <div className="glass-card p-6 rounded-2xl flex items-center gap-6 group hover:border-[var(--color-emerald)]/30 transition-all duration-300 hover:shadow-[0_0_20px_rgba(16,185,129,0.1)] hover:-translate-y-1">
+                <div className="p-4 rounded-full bg-white/5 text-[var(--color-emerald)] group-hover:bg-[var(--color-emerald)] group-hover:text-white transition-colors duration-300">
                   <Mail size={24} />
                 </div>
                 <div>
-                  <h4 className="text-gray-400 text-sm mb-1 uppercase tracking-wider font-medium">Email Me</h4>
+                  <h4 className="text-[var(--color-text-muted)] text-sm mb-1 uppercase tracking-wider font-medium">Email Me</h4>
                   <p className="text-lg text-white font-medium">jot60103@gmail.com</p>
                 </div>
               </div>
             </a>
 
             <a href="tel:+918544926441" className="block">
-              <div className="glass-card p-6 rounded-2xl flex items-center gap-6 group hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] hover:-translate-y-1">
-                <div className="p-4 rounded-full bg-white/5 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+              <div className="glass-card p-6 rounded-2xl flex items-center gap-6 group hover:border-[var(--color-emerald)]/30 transition-all duration-300 hover:shadow-[0_0_20px_rgba(16,185,129,0.1)] hover:-translate-y-1">
+                <div className="p-4 rounded-full bg-white/5 text-[var(--color-emerald)] group-hover:bg-[var(--color-emerald)] group-hover:text-white transition-colors duration-300">
                   <Phone size={24} />
                 </div>
                 <div>
-                  <h4 className="text-gray-400 text-sm mb-1 uppercase tracking-wider font-medium">Call Me</h4>
+                  <h4 className="text-[var(--color-text-muted)] text-sm mb-1 uppercase tracking-wider font-medium">Call Me</h4>
                   <p className="text-lg text-white font-medium">+91 85449-26441</p>
                 </div>
               </div>
             </a>
 
-            <div className="glass-card p-6 rounded-2xl flex items-center gap-6 group hover:border-primary/50 transition-all duration-300">
-              <div className="p-4 rounded-full bg-white/5 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+            <div className="glass-card p-6 rounded-2xl flex items-center gap-6 group hover:border-[var(--color-emerald)]/30 transition-all duration-300 hover:shadow-[0_0_20px_rgba(16,185,129,0.1)]">
+              <div className="p-4 rounded-full bg-white/5 text-[var(--color-emerald)] group-hover:bg-[var(--color-emerald)] group-hover:text-white transition-colors duration-300">
                 <MapPin size={24} />
               </div>
               <div>
-                <h4 className="text-gray-400 text-sm mb-1 uppercase tracking-wider font-medium">Location</h4>
+                <h4 className="text-[var(--color-text-muted)] text-sm mb-1 uppercase tracking-wider font-medium">Location</h4>
                 <p className="text-lg text-white font-medium">Patiala, Punjab, India</p>
               </div>
             </div>
 
             {/* Social Links */}
             <div className="pt-6">
-              <p className="text-gray-400 text-sm uppercase tracking-wider font-medium mb-4">Connect With Me</p>
+              <p className="text-[var(--color-text-muted)] text-sm uppercase tracking-wider font-medium mb-4">Connect With Me</p>
               <div className="flex gap-4">
                 {socialLinks.map((social, idx) => (
                   <motion.a
@@ -122,9 +122,9 @@ const Contact = () => {
                     rel="noreferrer"
                     whileHover={{ y: -5, scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
-                    className="p-4 glass-card rounded-xl text-gray-400 hover:text-white hover:border-primary/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all duration-300 relative group overflow-hidden"
+                    className="p-4 glass-card rounded-xl text-[var(--color-text-muted)] hover:text-white hover:border-[var(--color-emerald)]/50 hover:shadow-[0_0_20px_rgba(16,185,129,0.2)] transition-all duration-300 relative group overflow-hidden"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-emerald)]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <social.icon size={26} className="relative z-10" />
                   </motion.a>
                 ))}
@@ -137,61 +137,61 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="lg:col-span-7 glass-card p-8 md:p-10 rounded-3xl relative overflow-hidden"
+            className="lg:col-span-7 glass-card p-8 md:p-10 rounded-[2rem] relative overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.2)]"
           >
-            <div className="absolute top-0 right-0 w-40 h-40 bg-primary/10 blur-[80px] rounded-full pointer-events-none"></div>
-            <div className="absolute bottom-0 left-0 w-40 h-40 bg-accent/10 blur-[80px] rounded-full pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-40 h-40 bg-[var(--color-emerald)]/10 blur-[80px] rounded-full pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-40 h-40 bg-[var(--color-teal)]/10 blur-[80px] rounded-full pointer-events-none"></div>
             
             <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2 relative group">
-                  <label className="text-sm text-gray-400 font-medium pl-1">Your Name</label>
+                  <label className="text-sm text-[var(--color-text-muted)] font-medium pl-1">Your Name</label>
                   <input 
                     type="text" 
                     name="name"
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full bg-background/50 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder-gray-500 hover:border-white/20" 
+                    className="w-full bg-[var(--color-secondary)]/50 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[var(--color-emerald)] focus:ring-1 focus:ring-[var(--color-emerald)] transition-all duration-300 placeholder-[var(--color-text-muted)]/50 hover:border-white/20" 
                     placeholder="John Doe" 
                   />
                 </div>
                 <div className="space-y-2 relative group">
-                  <label className="text-sm text-gray-400 font-medium pl-1">Your Email</label>
+                  <label className="text-sm text-[var(--color-text-muted)] font-medium pl-1">Your Email</label>
                   <input 
                     type="email" 
                     name="email"
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full bg-background/50 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder-gray-500 hover:border-white/20" 
+                    className="w-full bg-[var(--color-secondary)]/50 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[var(--color-emerald)] focus:ring-1 focus:ring-[var(--color-emerald)] transition-all duration-300 placeholder-[var(--color-text-muted)]/50 hover:border-white/20" 
                     placeholder="john@example.com" 
                   />
                 </div>
               </div>
               
               <div className="space-y-2">
-                <label className="text-sm text-gray-400 font-medium pl-1">Subject</label>
+                <label className="text-sm text-[var(--color-text-muted)] font-medium pl-1">Subject</label>
                 <input 
                   type="text" 
                   name="subject"
                   required
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full bg-background/50 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder-gray-500 hover:border-white/20" 
+                  className="w-full bg-[var(--color-secondary)]/50 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[var(--color-emerald)] focus:ring-1 focus:ring-[var(--color-emerald)] transition-all duration-300 placeholder-[var(--color-text-muted)]/50 hover:border-white/20" 
                   placeholder="Project Inquiry" 
                 />
               </div>
               
               <div className="space-y-2">
-                <label className="text-sm text-gray-400 font-medium pl-1">Message</label>
+                <label className="text-sm text-[var(--color-text-muted)] font-medium pl-1">Message</label>
                 <textarea 
                   rows="5" 
                   name="message"
                   required
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full bg-background/50 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 resize-none placeholder-gray-500 hover:border-white/20" 
+                  className="w-full bg-[var(--color-secondary)]/50 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[var(--color-emerald)] focus:ring-1 focus:ring-[var(--color-emerald)] transition-all duration-300 resize-none placeholder-[var(--color-text-muted)]/50 hover:border-white/20" 
                   placeholder="Hello Amritpal, I would like to discuss..."
                 ></textarea>
               </div>
@@ -204,7 +204,7 @@ const Contact = () => {
                 className={`w-full py-4 rounded-xl text-white font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-3 overflow-hidden relative ${
                   isSuccess 
                     ? 'bg-green-500/20 text-green-400 border border-green-500/50 hover:bg-green-500/30' 
-                    : 'bg-primary hover:bg-primary-dark shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)]'
+                    : 'btn-primary'
                 }`}
               >
                 {!isSubmitting && !isSuccess && (

@@ -14,33 +14,37 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-24 relative bg-white/[0.02]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-24 relative overflow-hidden bg-[var(--color-secondary)]/30 border-y border-white/[0.02]">
+      <div className="absolute top-1/3 right-0 w-[400px] h-[400px] bg-[var(--color-teal)]/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          transition={{ duration: 0.7 }}
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">What I Offer</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+          <h2 className="text-sm tracking-[0.3em] text-[var(--color-text-muted)] uppercase mb-4 font-semibold">Capabilities</h2>
+          <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">What I <span className="emerald-text">Offer</span></h3>
+          <div className="w-16 h-1 bg-gradient-to-r from-[var(--color-teal)] to-[var(--color-emerald)] mx-auto rounded-full"></div>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {services.map((service, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="glass-card p-6 rounded-2xl hover:-translate-y-2 transition-all duration-300 group hover:bg-white/10"
+              transition={{ delay: idx * 0.1, duration: 0.5 }}
+              className="glass-card p-8 rounded-3xl hover:-translate-y-2 transition-all duration-300 group hover:shadow-[0_15px_40px_rgba(16,185,129,0.1)] hover:border-white/20"
             >
-              <div className="mb-4 inline-block p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                <service.icon size={28} />
+              <div className="mb-6 inline-block p-4 rounded-2xl bg-white/5 text-[var(--color-text-muted)] group-hover:bg-[var(--color-emerald)] group-hover:text-white group-hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all duration-300">
+                <service.icon size={30} />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">{service.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <h3 className="text-lg font-bold text-white mb-3 group-hover:text-[var(--color-silver)] transition-colors">{service.title}</h3>
+              <p className="text-[var(--color-text-muted)] text-sm leading-relaxed font-light">
                 {service.desc}
               </p>
             </motion.div>

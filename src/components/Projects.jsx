@@ -45,56 +45,60 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-24 relative bg-white/[0.02]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-24 relative overflow-hidden">
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[var(--color-emerald)]/5 rounded-full blur-[150px] pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          transition={{ duration: 0.7 }}
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Featured Projects</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+          <h2 className="text-sm tracking-[0.3em] text-[var(--color-text-muted)] uppercase mb-4 font-semibold">Portfolio</h2>
+          <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">Featured <span className="emerald-text">Projects</span></h3>
+          <div className="w-16 h-1 bg-gradient-to-r from-[var(--color-teal)] to-[var(--color-emerald)] mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {projects.map((project, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="glass-card rounded-2xl p-6 group hover:-translate-y-2 transition-transform duration-300 flex flex-col h-full"
+              transition={{ delay: idx * 0.1, duration: 0.6 }}
+              className="glass-card rounded-[2rem] p-8 group hover:-translate-y-2 transition-transform duration-500 flex flex-col h-full hover:shadow-[0_20px_50px_rgba(16,185,129,0.1)] hover:border-white/20"
             >
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
+              <div className="flex justify-between items-start mb-6">
+                <h3 className="text-2xl font-bold text-white group-hover:text-[var(--color-emerald)] transition-colors">
                   {project.title}
                 </h3>
-                <div className="flex gap-3">
+                <div className="flex gap-4">
                   {project.links.map((link, lidx) => (
-                    <a key={lidx} href={link.url} className="text-gray-400 hover:text-white transition-colors">
-                      {link.type === 'github' && <FaGithub size={20} />}
-                      {link.type === 'demo' && <ExternalLink size={20} />}
-                      {link.type === 'video' && <PlayCircle size={20} />}
+                    <a key={lidx} href={link.url} className="text-[var(--color-text-muted)] hover:text-white transition-colors hover:scale-110 transform">
+                      {link.type === 'github' && <FaGithub size={22} />}
+                      {link.type === 'demo' && <ExternalLink size={22} />}
+                      {link.type === 'video' && <PlayCircle size={22} />}
                     </a>
                   ))}
                 </div>
               </div>
               
-              <p className="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">
+              <p className="text-[var(--color-text-muted)] text-base mb-8 flex-grow leading-relaxed font-light">
                 {project.description}
               </p>
               
-              <div className="mb-4 p-3 bg-white/5 rounded-lg border border-white/5">
-                <p className="text-xs text-gray-300">
-                  <span className="font-semibold text-accent">Impact:</span> {project.result}
+              <div className="mb-6 p-4 bg-white/[0.02] rounded-xl border border-white/5">
+                <p className="text-sm text-[var(--color-text-muted)]">
+                  <span className="font-semibold text-[var(--color-silver)]">Impact:</span> {project.result}
                 </p>
               </div>
               
               <div className="flex flex-wrap gap-2 mt-auto">
                 {project.tech.map((tech, tidx) => (
-                  <span key={tidx} className="text-xs font-medium px-2.5 py-1 bg-primary/10 text-primary rounded-full border border-primary/20">
+                  <span key={tidx} className="text-xs font-medium px-3 py-1.5 bg-[var(--color-emerald)]/10 text-[var(--color-emerald)] rounded-full border border-[var(--color-emerald)]/20 shadow-[0_0_10px_rgba(16,185,129,0.05)]">
                     {tech}
                   </span>
                 ))}

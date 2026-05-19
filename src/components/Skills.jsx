@@ -28,43 +28,53 @@ const Skills = () => {
   const [activeTab, setActiveTab] = useState('development');
 
   return (
-    <section id="skills" className="py-24 relative bg-white/[0.02]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-24 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[var(--color-teal)]/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">My Skills</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+          <h2 className="text-sm tracking-[0.3em] text-[var(--color-text-muted)] uppercase mb-4 font-semibold">Expertise</h2>
+          <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">Technical <span className="emerald-text">&</span> Creative Arsenal</h3>
+          <div className="w-16 h-1 bg-gradient-to-r from-[var(--color-teal)] to-[var(--color-emerald)] mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-16">
           {skillCategories.map((category) => (
             <button
               key={category.id}
               onClick={() => setActiveTab(category.id)}
-              className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 relative overflow-hidden group ${
                 activeTab === category.id 
-                  ? 'bg-primary text-white shadow-[0_0_15px_rgba(59,130,246,0.5)]' 
-                  : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
+                  ? 'text-white border border-[var(--color-emerald)]/50 bg-[var(--color-emerald)]/10 shadow-[0_0_20px_rgba(16,185,129,0.15)]' 
+                  : 'text-[var(--color-text-muted)] border border-white/10 bg-white/5 hover:text-white hover:border-white/20'
               }`}
             >
-              {category.label}
+              <span className="relative z-10">{category.label}</span>
+              {activeTab === category.id && (
+                <motion.div 
+                  layoutId="activeTabIndicator"
+                  className="absolute inset-0 bg-gradient-to-r from-[var(--color-teal)]/20 to-[var(--color-emerald)]/20"
+                />
+              )}
             </button>
           ))}
         </div>
 
-        <div className="min-h-[200px]">
+        <div className="min-h-[250px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"
+              transition={{ duration: 0.4 }}
+              className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto"
             >
               {skillCategories.find(c => c.id === activeTab)?.skills.map((skill, idx) => (
                 <motion.div
@@ -72,9 +82,9 @@ const Skills = () => {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: idx * 0.05 }}
-                  className="glass-card p-4 rounded-xl text-center hover:border-primary/50 transition-colors group"
+                  className="glass-card px-8 py-4 rounded-2xl hover:glass-card-hover hover:-translate-y-1 transition-all duration-300"
                 >
-                  <span className="text-gray-300 font-medium group-hover:text-white transition-colors">
+                  <span className="text-[var(--color-text-premium)] font-medium">
                     {skill}
                   </span>
                 </motion.div>
