@@ -79,7 +79,7 @@ const Hero = () => {
                 <ArrowRight size={18} className="relative z-10 group-hover:translate-x-1 transition-transform" />
                 <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-teal)] to-[var(--color-emerald)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
-              <a href="#" className="btn-secondary px-8 py-4 rounded-xl text-sm font-semibold flex items-center gap-3 hover:bg-white/10 hover:border-white/20 transition-all">
+              <a href="https://drive.google.com/file/d/1thq38-_Hakl45Fqr5sex8olOPjb5OYeW/view?usp=sharing" target="_blank" rel="noreferrer" className="btn-secondary px-8 py-4 rounded-xl text-sm font-semibold flex items-center gap-3 hover:bg-white/10 hover:border-white/20 transition-all">
                 Download CV
                 <Download size={18} />
               </a>
