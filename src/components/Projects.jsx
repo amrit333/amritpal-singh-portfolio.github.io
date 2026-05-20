@@ -5,6 +5,16 @@ import { FaGithub } from 'react-icons/fa';
 
 const projects = [
   {
+    title: 'FinShield: Real-Time Fraud Detection',
+    description: 'A real-time financial fraud detection and transaction monitoring platform designed to secure user transactions against scams, phishing, and fraud.',
+    tech: ['Next.js', 'Spring Boot', 'Kafka', 'Redis', 'JWT', 'Docker'],
+    result: 'Real-time alert dispatching with sub-2ms processing latency.',
+    links: [
+      { type: 'github', url: '#' },
+      { type: 'demo', url: 'https://fin-shield-real-time-financial-frau.vercel.app/' }
+    ]
+  },
+  {
     title: 'Tech Wealth Coach Mobile App',
     description: 'Developed a comprehensive mobile application combining financial education with AI-driven insights.',
     tech: ['Java', 'Android Studio', 'Firebase', 'REST APIs'],
@@ -15,12 +25,12 @@ const projects = [
     ]
   },
   {
-    title: 'Freelancing Platform Backend',
-    description: 'Architected and built a scalable backend for a freelancing platform supporting user authentication, bids, and project management.',
-    tech: ['Java', 'Spring Boot', 'MongoDB', 'JWT Auth'],
+    title: 'Freelancing Platform App',
+    description: 'Architected and built a full-stack freelancing platform supporting user authentication, bids, secure payments, and project management.',
+    tech: ['Java', 'Spring Boot', 'React', 'MongoDB', 'JWT Auth'],
     result: 'High-performance API handling thousands of concurrent connections.',
     links: [
-      { type: 'github', url: '#' }
+      { type: 'github', url: 'https://github.com/amrit333/Freelancing-Platform-APP-Using-Spring-boot-and-React' }
     ]
   },
   {
@@ -29,7 +39,7 @@ const projects = [
     tech: ['Premiere Pro', 'AI Tools', 'YouTube SEO', 'Canva'],
     result: 'Grew organic viewership and subscriber retention significantly.',
     links: [
-      { type: 'video', url: '#' }
+      { type: 'video', url: 'https://www.youtube.com/@techwealthcoach' }
     ]
   },
   {
@@ -38,7 +48,7 @@ const projects = [
     tech: ['Ahrefs', 'Search Console', 'Content Strategy'],
     result: 'Improved domain authority and search visibility within 3 months.',
     links: [
-      { type: 'demo', url: '#' }
+      { type: 'demo', url: 'https://daydreamepoxy.ca/' }
     ]
   }
 ];
