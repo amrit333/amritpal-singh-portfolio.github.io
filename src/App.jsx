@@ -6,6 +6,7 @@ import Skills from './components/Skills';
 import Experience from './components/Experience';
 import FinShield from './components/FinShield';
 import Projects from './components/Projects';
+import Certifications from './components/Certifications';
 import Achievements from './components/Achievements';
 import Services from './components/Services';
 import Contact from './components/Contact';
@@ -23,6 +24,7 @@ function App() {
         <Experience />
         <FinShield />
         <Projects />
+        <Certifications />
         <Achievements />
         <Services />
         <Contact />
